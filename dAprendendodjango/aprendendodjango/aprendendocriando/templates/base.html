@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Series</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+    <h1 color = white>Bem-vindo ao Meu Blog</h1>
+</header>
+
+<div class="container">
+    <h1 color = #333>Últimos Posts</h1>
+    
+    {% for post in imagens %}
+    <div class="post">
+        <h2>{{ post.nome }}</h2>
+        <img src = "{{ post.imagem_url }}" alt="{{ imagem.nome }}" class="imagem">
+        <a href="/{{ post.nome }}">Saiba Mais</a>
+        
+    </div>
+    {% endfor %}
+    
+    {% if not imagens %}
+    <p>Não há posts ainda.</p>
+    {% endif %}
+</div>
+
+</body>
+</html>
